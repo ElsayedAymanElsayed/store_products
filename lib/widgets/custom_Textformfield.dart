@@ -23,15 +23,16 @@ class CustomTextformfield extends StatelessWidget {
       style: TextStyle(color: kprimryColor),
       decoration: InputDecoration(
         hintText: hint,
+        hintStyle: TextStyle(color: kprimryColor),
         suffixIcon: icon,
         fillColor: kwiteColor,
         filled: true,
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(8),
           borderSide: BorderSide(color: kwiteColor),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(8),
           borderSide: BorderSide(color: kwiteColor),
         ),
       ),

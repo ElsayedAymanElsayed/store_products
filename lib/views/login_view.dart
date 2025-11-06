@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
+import 'package:store_products/Refactor_ui/login_ui.dart';
 import 'package:store_products/constants.dart';
-import 'package:store_products/widgets/custom_Textformfield.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -10,12 +11,17 @@ class LoginView extends StatelessWidget {
     return Scaffold(
       backgroundColor: kwiteColor,
       body: Padding(
-        padding: const EdgeInsets.only(top: 50),
+        padding: const EdgeInsets.only(top: 200),
         child: Container(
-          decoration: BoxDecoration(color: kprimryColor),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-            child: Column(children: [CustomTextformfield()]),
+          decoration: BoxDecoration(
+            color: kprimryColor,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(30),
+              topRight: Radius.circular(30),
+            ),
+          ),
+          child: SingleChildScrollView(
+            child: Column(children: [LoginUi(), Gap(150)]),
           ),
         ),
       ),
