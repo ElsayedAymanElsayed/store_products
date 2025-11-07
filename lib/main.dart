@@ -1,9 +1,14 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:store_products/firebase_options.dart';
 import 'package:store_products/views/login_view.dart';
 import 'package:store_products/views/register_view.dart';
 import 'package:store_products/views/splash_view.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
   runApp(const StoreApp());
 }
 

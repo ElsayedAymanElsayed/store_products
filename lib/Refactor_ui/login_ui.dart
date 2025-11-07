@@ -6,8 +6,15 @@ import 'package:store_products/widgets/custom_Text.dart';
 import 'package:store_products/widgets/custom_Textformfield.dart';
 import 'package:store_products/widgets/custom_container.dart';
 
-class LoginUi extends StatelessWidget {
+class LoginUi extends StatefulWidget {
   const LoginUi({super.key});
+
+  @override
+  State<LoginUi> createState() => _LoginUiState();
+}
+
+class _LoginUiState extends State<LoginUi> {
+  bool selecticon = true;
 
   @override
   Widget build(BuildContext context) {
@@ -29,11 +36,17 @@ class LoginUi extends StatelessWidget {
             ),
             const Gap(15),
             CustomTextformfield(
+              obscuretext: selecticon,
               onchanged: (value) {},
               hint: 'Password',
               icon: IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.visibility, color: kprimryColor),
+                onPressed: () => setState(() {
+                  selecticon = !selecticon;
+                }),
+                icon: Icon(
+                  selecticon ? Icons.visibility_off : Icons.visibility,
+                  color: kprimryColor,
+                ),
               ),
             ),
             const Gap(20),

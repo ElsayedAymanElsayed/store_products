@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:store_products/Refactor_ui/register_circleAvatar.dart';
 import 'package:store_products/Refactor_ui/register_ui.dart';
 import 'package:store_products/constants.dart';
 
@@ -27,12 +26,7 @@ class RegisterView extends StatelessWidget {
                   ),
                 ),
                 child: Column(
-                  children: [
-                    const Gap(10),
-                    RegisterCircleavatar(),
-                    Registerui(),
-                    const Gap(50),
-                  ],
+                  children: [const Gap(10), Registerui(), const Gap(200)],
                 ),
               ),
             ),
