@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:store_products/Refactor_ui/register_ui.dart';
+import 'package:store_products/Refactor/register_ui.dart';
 import 'package:store_products/constants.dart';
 
 class RegisterView extends StatelessWidget {

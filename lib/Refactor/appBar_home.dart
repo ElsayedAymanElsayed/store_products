@@ -33,10 +33,7 @@ class AppBarHome extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.only(right: 10),
-          child: Text(
-            '\$44',
-            style: TextStyle(color: kwiteColor, fontSize: 19),
-          ),
+          child: CustomText(text: '\$44', size: 19),
         ),
       ],
     );

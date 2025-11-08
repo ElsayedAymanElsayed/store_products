@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:store_products/firebase_options.dart';
-import 'package:store_products/views/bottomNavigation_pageview.dart';
+import 'package:store_products/views/rootviews.dart';
 import 'package:store_products/views/home_view.dart';
 import 'package:store_products/views/login_view.dart';
 import 'package:store_products/views/register_view.dart';
@@ -26,14 +26,14 @@ class StoreApp extends StatelessWidget {
         SplashView.id: (context) => SplashView(),
         RegisterView.id: (context) => RegisterView(),
         HomeView.id: (context) => HomeView(),
-        BottomnavigationPageview.id: (context) => BottomnavigationPageview(),
+        RootView.id: (context) => RootView(),
       },
       theme: ThemeData(
         splashFactory: NoSplash.splashFactory,
         splashColor: Colors.transparent,
         highlightColor: Colors.transparent,
       ),
-      initialRoute: BottomnavigationPageview.id,
+      initialRoute: SplashView.id,
     );
   }
 }

@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:store_products/Refactor_ui/custom_BottomNavigationBar.dart';
+import 'package:store_products/Refactor/custom_BottomNavigationBar.dart';
 import 'package:store_products/views/buyNow_view.dart';
 import 'package:store_products/views/cart_view.dart';
 import 'package:store_products/views/home_view.dart';
 import 'package:store_products/views/profile_view.dart';
 
-class BottomnavigationPageview extends StatefulWidget {
-  const BottomnavigationPageview({super.key});
+class RootView extends StatefulWidget {
+  const RootView({super.key});
   static final String id = 'page view';
   @override
-  State<BottomnavigationPageview> createState() =>
-      _BottomnavigationPageviewState();
+  State<RootView> createState() => _RootViewState();
 }
 
-class _BottomnavigationPageviewState extends State<BottomnavigationPageview> {
+class _RootViewState extends State<RootView> {
   late List<Widget> screens = [];
   int selectpage = 0;
   late PageController controller;
@@ -33,7 +32,11 @@ class _BottomnavigationPageviewState extends State<BottomnavigationPageview> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PageView(controller: controller, children: screens),
+      body: PageView(
+        physics: NeverScrollableScrollPhysics(),
+        controller: controller,
+        children: screens,
+      ),
 
       bottomNavigationBar: CustomBottomnavigationbar(
         currentindex: selectpage,

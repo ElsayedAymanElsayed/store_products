@@ -9,15 +9,21 @@ class CustomTextformfield extends StatelessWidget {
     this.onchanged,
     this.vaildtion,
     this.obscuretext = false,
+    this.length,
+    this.keyboardType,
   });
   final String? hint;
   final IconButton? icon;
   final Function(String)? onchanged;
   final String? Function(String?)? vaildtion;
   final bool? obscuretext;
+  final int? length;
+  final TextInputType? keyboardType;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      keyboardType: keyboardType,
+      maxLength: length,
       obscureText: obscuretext!,
       validator: vaildtion,
       cursorColor: kprimryColor,
@@ -25,6 +31,7 @@ class CustomTextformfield extends StatelessWidget {
       onChanged: onchanged,
       style: TextStyle(color: kprimryColor),
       decoration: InputDecoration(
+        counterStyle: TextStyle(color: kwiteColor),
         hintText: hint,
         hintStyle: TextStyle(color: kprimryColor),
         suffixIcon: icon,
@@ -37,6 +44,10 @@ class CustomTextformfield extends StatelessWidget {
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
           borderSide: BorderSide(color: kwiteColor),
+        ),
+        errorBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
         ),
       ),
     );
