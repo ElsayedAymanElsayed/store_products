@@ -17,6 +17,7 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
       backgroundColor: kwiteColor,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: kprimryColor,
         title: CircleAvatar(
           backgroundColor: kprimryColor,

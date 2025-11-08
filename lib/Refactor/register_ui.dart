@@ -5,6 +5,7 @@ import 'package:gap/gap.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:store_products/constants.dart';
 import 'package:store_products/helpers/showSnackBar.dart';
+import 'package:store_products/views/rootviews.dart';
 import 'package:store_products/widgets/custom_Text.dart';
 import 'package:store_products/widgets/custom_Textformfield.dart';
 import 'package:store_products/widgets/custom_container.dart';
@@ -124,7 +125,7 @@ class _RegisteruiState extends State<Registerui> {
                     return 'Password No spaces';
                   }
                   if (value.length < 9) {
-                    return 'Password is must be 9 numbers';
+                    return 'Password is must be 9 Numbers';
                   } else {
                     return null;
                   }
@@ -179,7 +180,8 @@ class _RegisteruiState extends State<Registerui> {
   Future<void> chackinemailAndpassword(BuildContext context) async {
     try {
       await createAccount();
-      showSnackBar(context, 'Create an account');
+      showSnackBar(context, 'Your account has been created');
+      Navigator.pushNamed(context, RootView.id);
     } on FirebaseException catch (e) {
       if (e.code == 'weak-password') {
         showSnackBar(context, 'The password provided is too weak');
