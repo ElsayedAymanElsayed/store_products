@@ -18,7 +18,7 @@ class CustomText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: GoogleFonts.poppins(
+      style: GoogleFonts.roboto(
         color: color ?? kwiteColor,
         fontSize: size ?? 16,
         fontWeight: fontWeight,

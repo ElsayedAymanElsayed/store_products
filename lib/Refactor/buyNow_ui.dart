@@ -20,7 +20,7 @@ class BuynowUi extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Gap(20),
+        Gap(40),
         CustomText(
           text: 'Order summary',
           color: Colors.black,

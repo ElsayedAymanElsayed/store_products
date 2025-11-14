@@ -3,8 +3,15 @@ import 'package:gap/gap.dart';
 import 'package:store_products/constants.dart';
 import 'package:store_products/widgets/custom_Text.dart';
 
-class CustomCashVisa extends StatelessWidget {
+class CustomCashVisa extends StatefulWidget {
   const CustomCashVisa({super.key});
+
+  @override
+  State<CustomCashVisa> createState() => _CustomCashVisaState();
+}
+
+class _CustomCashVisaState extends State<CustomCashVisa> {
+  String selecedTap = 'Cash';
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -33,8 +40,12 @@ class CustomCashVisa extends StatelessWidget {
           trailing: Radio(
             activeColor: Colors.blue,
             value: 'Cash',
-            groupValue: 'Cash',
-            onChanged: (value) {},
+            groupValue: selecedTap,
+            onChanged: (value) {
+              setState(() {
+                selecedTap = value!;
+              });
+            },
           ),
         ),
 
@@ -67,9 +78,13 @@ class CustomCashVisa extends StatelessWidget {
             ),
             trailing: Radio(
               activeColor: Colors.blue,
-              value: 'Cash',
-              groupValue: 'Cash',
-              onChanged: (value) {},
+              value: 'Debit',
+              groupValue: selecedTap,
+              onChanged: (value) {
+                setState(() {
+                  selecedTap = value!;
+                });
+              },
             ),
           ),
         ),

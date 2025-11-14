@@ -21,6 +21,7 @@ class LoginView extends StatelessWidget {
             ),
           ),
           child: SingleChildScrollView(
+            physics: NeverScrollableScrollPhysics(),
             child: Column(children: [LoginUi(), const Gap(300)]),
           ),
         ),
